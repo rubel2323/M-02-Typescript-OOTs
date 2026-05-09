@@ -31,10 +31,18 @@ class Students extends Person {
 }
 //function guard
 
+const isTeacher = (user: Person) => {
+  return user instanceof Teacher;
+};
+
+const isStudents = (user: Person) => {
+  return user instanceof Students;
+};
+
 const getUserInfo = (user: Person) => {
-  if (user instanceof Teacher) {
+  if (isTeacher(user)) {
     return user.takeClass(3);
-  } else if (user instanceof Students) {
+  } else if (isStudents(user)) {
     return user.doClass(6);
   } else {
     return user.getSleep(8);
