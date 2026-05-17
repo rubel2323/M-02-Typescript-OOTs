@@ -1,3 +1,4 @@
+
 interface Mediaplayer {
   play(): void;
   pause(): void;
@@ -21,3 +22,34 @@ class MusicPlayer implements Mediaplayer {
 const habibPlayer = new MusicPlayer();
 habibPlayer.stop();
 habibPlayer.pause();
+
+// Abstract class
+// idea
+abstract class SocialMediaPlayer {
+  abstract play(): void;
+  abstract pause(): void;
+  abstract stop(): void;
+
+  showInfo(): void {
+    console.log('The version is 4.0.9.0');
+  }
+}
+
+// implementation
+
+class SocialMusicPlayer extends SocialMediaPlayer {
+  play() {
+    console.log('playing music from abstract class');
+  }
+  pause() {
+    console.log('paused music from abstract class');
+  }
+  stop() {
+    console.log('paused music from abstract class');
+  }
+}
+
+const SocialMusicPlayer1 = new SocialMusicPlayer();
+SocialMusicPlayer1.play();
+SocialMusicPlayer1.stop();
+SocialMusicPlayer1.showInfo();
